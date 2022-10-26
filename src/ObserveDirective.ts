@@ -3,17 +3,17 @@
  */
 
 import { noChange } from "lit-html";
-import { AsyncDirective, directive } from "lit-html/async-directive";
+import { AsyncDirective, directive } from "lit-html/async-directive.js";
 import type { Subscribable } from ".";
 
 class ObserveDirective extends AsyncDirective {
 
-  observable: Subscribable<unknown>;
-  unsubscribe: Function;
+  observable!: Subscribable<unknown>;
+  unsubscribe!: () => void;
 
   // When the observable changes, unsubscribe to the old one and
   // subscribe to the new one
-  render(observable) {
+  render(observable: Subscribable<unknown>) {
     if (this.observable !== observable) {
       this.unsubscribe?.();
       this.observable = observable;
@@ -27,7 +27,7 @@ class ObserveDirective extends AsyncDirective {
 
   // Subscribes to the observable, calling the directive's asynchronous
   // setValue API each time the value changes
-  subscribe(observable) {
+  subscribe(observable: Subscribable<unknown>) {
     this.unsubscribe = observable.subscribe((v) => {
       this.setValue(v);
     });

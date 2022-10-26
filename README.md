@@ -1,6 +1,6 @@
 # lit-signals
 
-Use signals & observables in lit-html templates without needing an Async Directive.
+Use signals & observables directly in lit-html templates without needing an Async Directive.
 
 ## RxJS Example
 ```js

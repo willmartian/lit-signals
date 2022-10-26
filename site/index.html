@@ -7,6 +7,7 @@
     <title>Vite + TS</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kimeiga/bahunya/dist/bahunya.min.css">
+    <script type="module" crossorigin src="/assets/index.acf390c6.js"></script>
   </head>
   <body>
     <h1># lit-html with support for Observables/Signals/Subscribables</h1>
@@ -32,23 +33,6 @@
     <b>Result:</b>
     <div id="preact"></div>
 
-    <script type="module">
-      import { html } from '/src/index.ts';
-      import { render } from 'lit-html';
-      import { interval } from 'rxjs';
-      import { signal } from '@preact/signals-core';
-
-      
-      render(
-        html`<div>${interval(1000)}</div>`,
-        document.querySelector('#rxjs')
-      );
-
-      const count$ = signal(0);
-      render(
-        html`<input type="button" value=${count$} @click=${() => count$.value += 1}>`, 
-        document.querySelector('#preact')
-      );
-    </script>
+    
   </body>
 </html>

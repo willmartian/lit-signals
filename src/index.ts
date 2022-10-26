@@ -2,7 +2,7 @@ import { html as _html } from "lit-html";
 import { observe } from "./ObserveDirective";
 
 export type Subscribable<T> = {
-    subscribe(subscriber: (value: T) => unknown): unknown;
+    subscribe(subscriber: (value: T) => unknown): () => void;
 }
 
 export const html = (strings: TemplateStringsArray, ...values: unknown[]) => {
