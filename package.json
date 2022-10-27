@@ -1,8 +1,10 @@
 {
   "name": "lit-signals",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "files": ["dist"],
+  "main": "./dist/lit-signals.umd.cjs",
+  "module": "./dist/lit-signals.js",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
